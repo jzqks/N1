@@ -7,12 +7,12 @@ patch -p1 -f < $(dirname "$0")/luci.patch
 git clone https://github.com/ophub/luci-app-amlogic --depth=1 clone/amlogic
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall --depth=1 clone/passwall
 git clone https://github.com/QiuSimons/luci-app-daed clone/daed
-git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+#git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+#git clone --depth 1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # Adjust packages
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-argon-config
+#rm -rf feeds/luci/themes/luci-theme-argon
+#rm -rf feeds/luci/applications/luci-app-argon-config
 rm -rf feeds/luci/applications/luci-app-daed feeds/luci/applications/luci-app-passwall
 cp -rf clone/amlogic/luci-app-amlogic clone/daed/luci-app-daed clone/passwall/luci-app-passwall feeds/luci/applications/
 sed -i '/luci-app-attendedsysupgrade/d' feeds/luci/collections/luci/Makefile
